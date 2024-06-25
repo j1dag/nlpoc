@@ -1,5 +1,4 @@
 name: Daily Update Nuclei POCs
-
 on:
   push:
     branches:
