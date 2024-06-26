@@ -13,12 +13,11 @@ info:
 
 requests:
   - method: GET
-
     path:
       - "{{BaseURL}}/wp-content/plugins/creative-mail-by-constant-contact/readme.txt"
 
     payloads:
-      last_version: ../../../helpers/wordpress/plugins/creative-mail-by-constant-contact.txt
+      last_version: helpers/wordpress/plugins/creative-mail-by-constant-contact.txt
 
     extractors:
       - type: regex

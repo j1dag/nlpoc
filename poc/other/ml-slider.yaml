@@ -13,12 +13,11 @@ info:
 
 requests:
   - method: GET
-
     path:
       - "{{BaseURL}}/wp-content/plugins/ml-slider/readme.txt"
 
     payloads:
-      last_version: ../../../helpers/wordpress/plugins/ml-slider.txt
+      last_version: helpers/wordpress/plugins/ml-slider.txt
 
     extractors:
       - type: regex
