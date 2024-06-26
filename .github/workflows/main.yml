@@ -29,12 +29,9 @@ jobs:
       
     - name: Commit and Push changes
       run: |
-        ls -l
-        git status
         echo $(date +'%Y%m%d') > date.txt
         git add .
-        git status  # 再次确认修改是否被正确添加
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git commit -am "Daily update $(date +'%Y%m%d')"
+        git commit -am "$(date +'%Y%m%d')"
         git push -v --progress
