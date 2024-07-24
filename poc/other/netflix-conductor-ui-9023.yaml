@@ -2,7 +2,6 @@ id: netflix-conductor-ui
 info:
   name: Netflix Conductor UI Detection
   author: c-sh0
-  description: Netflix conductor ui Detection
   severity: info
   metadata:
     shodan-query: http.title:"Conductor UI", http.title:"Workflow UI"
@@ -10,7 +9,7 @@ info:
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}/"
+      - "{{BaseURL}}"
     redirects: true
     max-redirects: 2
     matchers-condition: and
@@ -19,11 +18,8 @@ requests:
         status:
           - 200
       - type: word
-        part: header
-        words:
-          - 'X-Powered-By: Express'
-      - type: word
         part: body
         words:
           - '<title>Conductor UI</title>'
           - '<title>Workflow UI</title>'
+        condition: or
