@@ -2,12 +2,12 @@ id: http-etcd-unauthenticated-api-data-leak
 
 info:
   name: etcd Unauthenticated HTTP API Leak
-  author: dhiyaneshDk
+  author: dhiyaneshDk,wjlin0
   severity: high
   reference: https://hackerone.com/reports/1088429
   tags: unauth
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/v2/auth/roles"
@@ -28,3 +28,4 @@ requests:
         part: header
         words:
           - "text/plain"
+# digest: 4a0a00473045022100cab98ddef5fc59badea08cce05af7fac649270d37aeff32f0ce33e7cf2b7dd3702202b0989702b8643b0b687c624dcfb54bf472e4f917deb26fd001514b328fae248:9d8cf424f0e932381bf27cf1e926b867
