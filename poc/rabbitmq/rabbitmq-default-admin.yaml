@@ -1,9 +1,11 @@
 id: rabbitmq-default-admin
+
 info:
   name: RabbitMQ Default Credentials
   author: fyoorer & dwisiswant0
   severity: High
-requests:
+
+http:
   - method: GET
     path:
       - "{{BaseURL}}/api/whoami"
