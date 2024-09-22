@@ -1,5 +1,4 @@
 id: dolphinscheduler-default-login
-
 info:
   name: Apache DolphinScheduler Default Login
   author: For3stCo1d
@@ -14,8 +13,7 @@ info:
   metadata:
     shodan-query: http.title:"DolphinScheduler"
   tags: apache,dolphinscheduler,default-login,oss
-
-http:
+requests:
   - raw:
       - |
         POST /dolphinscheduler/login HTTP/1.1
@@ -23,14 +21,12 @@ http:
         Content-Type: application/x-www-form-urlencoded
 
         userName={{user}}&userPassword={{pass}}
-
     attack: pitchfork
     payloads:
       user:
         - admin
       pass:
         - dolphinscheduler123
-
     matchers-condition: and
     matchers:
       - type: word
@@ -39,7 +35,6 @@ http:
           - '"msg":"login success"'
           - '"sessionId":'
         condition: and
-
       - type: status
         status:
           - 200
