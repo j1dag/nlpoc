@@ -1,5 +1,4 @@
 id: wso2-default-login
-
 info:
   name: WSO2 Management Console Default Login
   author: cocxanh
@@ -13,8 +12,7 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-522
   tags: default-login,wso2
-
-http:
+requests:
   - raw:
       - |
         POST /carbon/admin/login_action.jsp HTTP/1.1
@@ -22,14 +20,12 @@ http:
         Content-Type: application/x-www-form-urlencoded
 
         username={{username}}&password={{password}}
-
     payloads:
       username:
         - admin
       password:
         - admin
     attack: pitchfork
-
     redirects: false
     matchers:
       - type: word
