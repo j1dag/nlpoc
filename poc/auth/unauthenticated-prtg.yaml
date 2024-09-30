@@ -4,10 +4,11 @@ info:
   name: Unauthenticated PRTG Traffic Grapher
   author: dhiyaneshDK
   severity: high
-  reference: https://www.exploit-db.com/ghdb/5808
+  reference:
+    - https://www.exploit-db.com/ghdb/5808
   tags: config,unauth,prtg
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/sensorlist.htm"

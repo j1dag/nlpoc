@@ -10,9 +10,9 @@ info:
     - https://github.com/act1on3/nuclei-templates/blob/master/vulnerabilities/kiwi-information-disclosure.yaml
   metadata:
     shodan-query: title:"Kiwi TCMS - Login",http.favicon.hash:-1909533337
-  tags: kiwitcms,exposure,misconfig,hackerone
+  tags: kiwitcms,exposure,misconfig
 
-http:
+requests:
   - raw:
       - |
         POST /json-rpc/ HTTP/1.1

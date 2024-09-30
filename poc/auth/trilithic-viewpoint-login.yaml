@@ -1,5 +1,4 @@
 id: trilithic-viewpoint-default
-
 info:
   name: Trilithic Viewpoint Default Login
   author: davidmckennirey
@@ -10,8 +9,7 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-522
   tags: default-login,trilithic,viewpoint
-
-http:
+requests:
   - raw:
       - |
         POST /ViewPoint/admin/Site/ViewPointLogin HTTP/1.1
@@ -20,20 +18,17 @@ http:
         Cookie: trilithic_win_auth=false
 
         {u:"{{username}}", t:"undefined", p:"{{password}}", d:"", r:false, w:false}
-
     payloads:
       username:
         - admin
       password:
         - trilithic
     attack: pitchfork
-
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
-
       - type: word
         words:
           - '"authorized":true'
