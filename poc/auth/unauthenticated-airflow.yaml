@@ -3,13 +3,12 @@ id: unauthenticated-airflow-instance
 info:
   name: Unauthenticated Airflow Instance
   author: dhiyaneshDK
-  severity: critical
+  severity: high
+  tags: apache,airflow,unauth
   metadata:
-    max-request: 2
     shodan-query: title:"Airflow - DAGs"
-  tags: apache,airflow,unauth,misconfig
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
