@@ -1,14 +1,12 @@
 id: wordpress-woocommerce-listing
-
 info:
   name: WordPress Woocommerce Plugin Directory Listing
   author: dhiyaneshDK
-  severity: info
+  severity: low
   description: Searches for sensitive directories present in the woocommerce wordpress plugin.
   reference: https://www.exploit-db.com/ghdb/6192
-  tags: wordpress,listing,plugin,woocommerce
-
-http:
+  tags: wordpress,listing
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/wp-content/plugins/woocommerce/"
@@ -19,7 +17,6 @@ http:
           - "Index of"
           - "/wp-content/plugins/woocommerce/"
         condition: and
-
       - type: status
         status:
           - 200
