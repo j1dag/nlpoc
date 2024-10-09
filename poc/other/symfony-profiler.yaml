@@ -2,7 +2,7 @@ id: symfony-profiler
 
 info:
   name: Symfony Profiler - Detect
-  author: h0tak88r
+  author: pdteam
   severity: high
   description: Symfony profiler was detected.
   reference: https://symfony.com/doc/current/profiler.html
@@ -21,9 +21,8 @@ http:
     path:
       - "{{BaseURL}}/_profiler/empty/search/results?limit=10"
       - "{{BaseURL}}/app_dev.php/_profiler/empty/search/results?limit=10"
-      - "{{BaseURL}}/_profiler"
-      - "{{BaseURL}}/_fragment"
 
+    stop-at-first-match: true
     matchers:
       - type: word
         part: body
