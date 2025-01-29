@@ -1,5 +1,4 @@
 id: glpi-default-login
-
 info:
   name: GLPI Default Login
   author: andysvints
@@ -9,11 +8,8 @@ info:
     - https://glpi-project.org/
   classification:
     cwe-id: CWE-798
-  metadata:
-    max-request: 2
   tags: glpi,default-login
-
-http:
+requests:
   - raw:
       - |
         GET / HTTP/1.1
@@ -26,14 +22,12 @@ http:
         Referer: {{BaseURL}}
 
         {{name}}={{user}}&{{password}}={{pass}}&auth=local&submit=Submit&_glpi_csrf_token={{token}}
-
     attack: pitchfork
     payloads:
       user:
         - glpi
       pass:
         - glpi
-
     extractors:
       - type: regex
         name: token
@@ -42,7 +36,6 @@ http:
         group: 1
         regex:
           - "hidden\" name=\"_glpi_csrf_token\" value=\"([0-9a-z]+)\""
-
       - type: regex
         name: name
         part: body
@@ -50,7 +43,6 @@ http:
         group: 1
         regex:
           - "type=\"text\" name=\"([0-9a-z]+)\" id=\"login_name\" required=\"required\""
-
       - type: regex
         name: password
         part: body
@@ -59,15 +51,13 @@ http:
         regex:
           - "type=\"password\" name=\"([0-9a-z]+)\" id=\"login_password\" required=\"required\""
     cookie-reuse: true
-
     matchers-condition: and
     matchers:
       - type: word
         words:
           - '<title>GLPI - Standard Interface</title>'
-
       - type: status
         status:
           - 200
 
-# digest: 490a004630440220125956e745edb925d07e2a1319619cb494cfac9090c521488dcef657947278f80220116b11961c08ae4b04defa77838f741b46e67163e8f75b314bad626f19dc8d8f:922c64590222798bb761d5b6d8e72950
+# Enhanced by mp on 2022/03/03
