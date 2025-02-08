@@ -1,4 +1,5 @@
 id: dell-idrac9-default-login
+
 info:
   name: DELL iDRAC9 Default Login
   author: kophjager007,milo2012
@@ -9,19 +10,22 @@ info:
   classification:
     cwe-id: cwe-798
   tags: dell,idrac,default-login
-requests:
+
+http:
   - raw:
       - |
         POST /sysmgmt/2015/bmc/session HTTP/1.1
         Host: {{Hostname}}
         User: "{{username}}"
         Password: "{{password}}"
+
     payloads:
       username:
         - root
       password:
         - calvin
     attack: pitchfork
+
     matchers-condition: and
     matchers:
       - type: status
@@ -29,6 +33,7 @@ requests:
           - 201
           - 200
         condition: or
+
       - type: word
         part: body
         words:
