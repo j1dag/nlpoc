@@ -1,22 +1,23 @@
 id: pwa-for-wp
 
 info:
-  name: "PWA for WP & AMP < = 1.7.32 - Missing Authorization"
+  name: "PWA for WP & AMP <= 1.7.32 - Arbitrary File Upload"
   author: topscoder
-  severity: medium
-  description: "The PWA for WP & AMP plugin for WordPress is vulnerable to authorization bypass due to a missing capability check on the  pwaforwp_update_features_options function in versions up to, and including, 1.7.32. This makes it possible for authenticated attackers to change the otherwise restricted settings within the plugin."
+  severity: high
+  description: "The PWA for WP & AMP for WordPress is vulnerable to arbitrary file uploads due to missing file type validation in the pwaforwp_splashscreen_uploader function in versions up to, and including, 1.7.32. This makes it possible for authenticated attackers to upload arbitrary files on the affected sites server which may make remote code execution possible."
   reference:
     - https://blog.nintechnet.com/wordpress-pwa-for-wp-and-amp-plugin-fixed-vulnerabilities/
-    - https://wpscan.com/vulnerability/b38a51d7-375e-4cca-88ba-ccab796ac134
+    - https://wpscan.com/vulnerability/db9d5a08-a16a-4767-8d85-1b3e02dbbfbd
+    - https://patchstack.com/database/vulnerability/pwa-for-wp/wordpress-pwa-for-wp-amp-plugin-1-7-32-authenticated-arbitrary-file-upload-vulnerability
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L
-    cvss-score: 6.3
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 8.8
     cve-id:
   metadata:
     fofa-query: "wp-content/plugins/pwa-for-wp/"
     google-query: inurl:"/wp-content/plugins/pwa-for-wp/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,pwa-for-wp,medium
+  tags: cve,wordpress,wp-plugin,pwa-for-wp,high
 
 http:
   - method: GET

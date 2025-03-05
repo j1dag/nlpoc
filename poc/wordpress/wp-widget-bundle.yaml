@@ -2,14 +2,14 @@ id: wp-widget-bundle
 
 info:
   name: >
-    Widget Bundle <= 2.0.0 - Authenticated (Admin+) Stored Cross-Site Scripting
+    Widget Bundle <= 2.0.0 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/fbba15aa-9d65-4cb8-867f-667af09ff826?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/49b2e332-4359-4dac-8a9e-1d71f39d509c?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/wp-widget-bundle/"
     google-query: inurl:"/wp-content/plugins/wp-widget-bundle/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wp-widget-bundle,low
+  tags: cve,wordpress,wp-plugin,wp-widget-bundle,medium
 
 http:
   - method: GET
