@@ -8,8 +8,9 @@ info:
     A ccleaner phishing website was detected
   reference:
     - https://ccleaner.com
+  metadata:
+    max-request: 1
   tags: phishing,ccleaner,osint
-
 http:
   - method: GET
     path:
@@ -31,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"ccleaner.com")'
-# digest: 490a00463044022027076469b15697e57c6741a9edca61b712c1b06801b645917b6d0637db53813902202dd9033c8429766606b08a34ea2c2bb08b02ecfb13f0d50ecbebc8209a4f8f2d:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022066457eb7a229004322b7253ff1c1b77e9dcbf5d4422c14d9834ec13fcd671081022100a8c9a7b637de2b2020ef2718475bb89ca51a72cd86f1909a6003f0763ed896cf:922c64590222798bb761d5b6d8e72950
