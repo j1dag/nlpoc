@@ -8,8 +8,9 @@ info:
     An avast phishing website was detected
   reference:
     - https://avast.com
+  metadata:
+    max-request: 1
   tags: phishing,avast,osint
-
 http:
   - method: GET
     path:
@@ -31,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"avast.com")'
-# digest: 4a0a0047304502203dff32265eb811a840fa886909ab0e646aa36d13d1696ee82e60353645e8aa9f0221009caf267b3a40d73bb79f5adc431bb914721db1422160711d4cb71eaecc76b46c:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440220461112014d21e7a979f94066c14d4d42673ab48776f7ac8b9a1599b0fd7c13b5022019af69f8a47580934bc3b4600e7ffba5105d0c745956188938b76bb27cb6a3f7:922c64590222798bb761d5b6d8e72950
