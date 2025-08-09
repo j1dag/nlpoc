@@ -8,9 +8,8 @@ info:
     A microsoft teams phishing website was detected
   reference:
     - https://www.microsoft.com/en-gb/microsoft-teams/download-app
-  metadata:
-    max-request: 1
   tags: phishing,microsoft-teams,osint
+
 http:
   - method: GET
     path:
@@ -32,4 +31,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"microsoft.com")'
-# digest: 4a0a00473045022044ba10d322d31037b5f12a4618b6706ec81d4919db0fd581cb3b8a11c2efcefc02210087c612bccdc8a4837030a1fa6f7c2525ed3bb8cb4ac9071459943f7edf9dc0a4:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440220101c6a7fe84b5dbe2a79bf32775298a7d49d3d33629af58c9c36232b723baa03022053bb096099a767e7f1b77c5d82eff76a527c45fece58590fcd20d114d41f63c0:922c64590222798bb761d5b6d8e72950

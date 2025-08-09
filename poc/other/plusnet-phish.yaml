@@ -8,9 +8,8 @@ info:
     A plusnet phishing website was detected
   reference:
     - https://plus.net
-  metadata:
-    max-request: 1
   tags: phishing,plusnet,osint
+
 http:
   - method: GET
     path:
@@ -32,4 +31,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"plus.net")'
-# digest: 490a00463044022008b7d09b8c9a6a8ce7d1188869ad5df2108a42793383d4253991bfb9f598d1a7022014cd070ec57435a0ea7c3e6b0d2ab10e577643e06cbea8cc1dcd4d668e780e81:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502200f3537e8c85cc3a9d63d352278e821eacc4ea00490ce69908a29307425eefec5022100c8fc6910928f171ba4c021e956b49a910e37e46b5b55b4f31978f6e2651b5f8b:922c64590222798bb761d5b6d8e72950

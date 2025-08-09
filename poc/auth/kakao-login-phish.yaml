@@ -9,9 +9,8 @@ info:
   reference:
     - https://accounts.kakao.com
     - https://www.kakaocorp.com
-  metadata:
-    max-request: 1
   tags: phishing,kakao,osint
+
 http:
   - method: GET
     path:
@@ -36,4 +35,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"accounts.kakao.com")'
-# digest: 4b0a00483046022100c33c76929be05ee886a9e637ed28d591d072f4f9300b0c749320a6177db72190022100c4a612b7a9db582c6e5979109f28ba67bd4cc7a3fea43d09ef752b2b7f18ff61:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440220122b2c53aa048d58c105451af4c68145074bbdecd158ceb8eac26e432f0e2e95022043f5be2ef35ae170ed26d56ebb1205c3dc9d7f9f5c56ca5bf5044f7a20a2066e:922c64590222798bb761d5b6d8e72950
