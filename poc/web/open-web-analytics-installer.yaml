@@ -10,7 +10,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"OWA CONFIG SETTINGS"
-  tags: misconfig,open-web-analytics,install,exposure
+  tags: misconfig,open-web-analytics,install,exposure,vuln
 
 http:
   - method: GET
@@ -27,4 +27,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022029974cf4e603dea7eecc6a609d4488378ba2a76e7f1ce9d42d63f72756a44599022100f721d58ac659a316a97bd3e4ea4dc7e15828cbf15d62dfe4d6e831857063c7a1:922c64590222798bb761d5b6d8e72950
+

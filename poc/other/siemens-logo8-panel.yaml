@@ -4,13 +4,12 @@ info:
   name: Siemens Logo! 8 Web - Panel
   author: biero-el-corridor
   severity: info
-  description:
-    Siemens Logo! 8 Web Login Panel was discovered.
+  description: Siemens Logo! 8 Web Login Panel was discovered.
   metadata:
-    max-request: 1
     verified: true
+    max-request: 1
     shodan-query: html:"/logo_login.shtm"
-  tags: ics,siemens,panel,login
+  tags: ics,siemens,panel,login,discovery
 
 http:
   - method: GET
@@ -29,4 +28,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402200203e8e31067780bd8cbe9a9de1c141b087d92156d5b6f6fd46489e21b4481c002207ee65034432794b2baf0292f96c99bde648d8e85f783314cc446d6ebf3527fbf:922c64590222798bb761d5b6d8e72950
+

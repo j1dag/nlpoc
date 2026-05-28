@@ -5,10 +5,11 @@ info:
   author: DhiyaneshDK
   severity: info
   metadata:
+    runzero-match: service["http.body"] matches "(?i)PowerChute Network Shutdown"
     verified: true
     max-request: 1
     shodan-query: html:"PowerChute Network Shutdown"
-  tags: panel,login,powerchute,detect
+  tags: panel,login,powerchute,detect,discovery
 
 http:
   - method: GET
@@ -25,4 +26,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402204dfed977010ce171ceea83642664f64783a8c0e829b354b97953f186f7ccffd10220061449550d5fc74eb0e1314c645ed6aecc8063f75f55d2acdb6b064698dfa186:922c64590222798bb761d5b6d8e72950
+

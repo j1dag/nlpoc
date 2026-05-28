@@ -9,11 +9,10 @@ info:
   reference:
     - https://medium.com/@hellother18/uncovering-a-vulnerability-in-intercom-widget-chat-configuration-e5633d06df60
     - https://www.intercom.com/help/en/articles/183-set-up-identity-verification-for-web-and-mobile
-  tags: intercom,unauth,exposure,misconfig
+  tags: intercom,unauth,exposure,misconfig,vuln
 
 variables:
   user_email: "test@example.com"
-
 flow: http(1) && http(2)
 
 http:
@@ -23,7 +22,6 @@ http:
 
     redirects: true
     max-redirects: 3
-
     matchers:
       - type: word
         words:
@@ -47,7 +45,6 @@ http:
 
     body: |
       app_id={{intercom_app_id}}&user_data={"email":"{{user_email}}"}
-
     matchers:
       - type: status
         status:
@@ -57,4 +54,4 @@ http:
       - type: dsl
         dsl:
           - Input
-# digest: 4a0a00473045022100db6320190c28b55000a76cc068255fd196cfc5f2d66cc9f450a03327c3b56bb602203b8a4da83918025b65463a0e64f83ccd48aa64406edf02ea0f7b4202aeba3f3e:922c64590222798bb761d5b6d8e72950
+

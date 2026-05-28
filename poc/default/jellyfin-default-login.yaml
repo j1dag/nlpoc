@@ -1,5 +1,4 @@
 id: jellyfin-default-login
-
 info:
   name: Jellyfin Console - Default Login
   author: thefoggiest
@@ -11,14 +10,41 @@ info:
     cwe-id: CWE-522
     cpe: cpe:2.3:a:jellyfin:jellyfin:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Jellyfin"})
     fofa-query: title="Jellyfin"
     product: jellyfin
     vendor: jellyfin
-  tags: default-login,jellyfin,misconfig
-
+    verified: true
+  tags: default-login,jellyfin,misconfig,vuln
 http:
-  - raw:
+  - attack: clusterbomb
+    matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - User":{"Name
+          - '"LastLoginDate":'
+          - 'AccessToken":'
+      - part: header
+        type: word
+        words:
+          - application/json
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    payloads:
+      password:
+        - admin
+        - test
+        - password
+        - jellyfin
+      username:
+        - admin
+        - administrator
+        - jellyfin
+    raw:
       - |
         POST /Users/authenticatebyname HTTP/1.1
         Host: {{Hostname}}
@@ -26,36 +52,4 @@ http:
         X-Emby-Authorization: MediaBrowser Client="Jellyfin Web", Device="Browser", DeviceId="DeviceID", Version="Version"
 
         {"Username":"{{username}}","Pw":"{{password}}"}
-
-    payloads:
-      username:
-        - admin
-        - administrator
-        - jellyfin
-      password:
-        - admin
-        - test
-        - password
-        - jellyfin
-    attack: clusterbomb
-
     stop-at-first-match: true
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'User":{"Name'
-          - '"LastLoginDate":'
-          - 'AccessToken":'
-        condition: and
-
-      - type: word
-        part: header
-        words:
-          - application/json
-
-      - type: status
-        status:
-          - 200
-# digest: 4a0a00473045022100a8d2d575006af837cf7e90e3a1679740e440078786619f7f4d04582a374dc2ed022073b92cc7b464a918a1a439883dcce4cb574ab4ec9f07d58cf96b432baa4c8916:922c64590222798bb761d5b6d8e72950

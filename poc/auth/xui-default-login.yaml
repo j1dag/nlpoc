@@ -1,5 +1,4 @@
 id: xui-default-login
-
 info:
   name: X-UI - Default Login
   author: dali
@@ -11,41 +10,38 @@ info:
     - https://seakfind.github.io/2021/10/10/X-UI/#:~:text=By%20default%2C%20the%20login%20user,the%20password%20is%20also%20admin%20.
   classification:
     cwe-id: CWE-798
+    cpe: cpe:2.3:a:vaxilu:x-ui:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
-    max-request: 2
+    runzero-match: any(each(service["html.titles"]), {# matches "X-UI Login"})
     fofa-query: title="X-UI Login"
+    max-request: 2
+    product: x-ui
     shodan-query: title:"X-UI Login"
-  tags: x-ui,default-login
-
+    vendor: vaxilu
+    verified: true
+  tags: default-login,vuln,x-ui
 http:
   - method: GET
     path:
-      - "{{BaseURL}}/login"
-
-  - method: POST
-    path:
-      - "{{BaseURL}}/login"
-
+      - '{{BaseURL}}/login'
+  - attack: pitchfork
+    body: username={{username}}&password={{password}}
     headers:
       content-type: application/x-www-form-urlencoded
-
-    body: "username={{username}}&password={{password}}"
-
-    attack: pitchfork
-    payloads:
-      username:
-        - "admin"
-      password:
-        - "admin"
-
-    matchers-condition: and
     matchers:
-      - type: dsl
+      - condition: and
         dsl:
           - '!contains(http_1_body, "\"success\":true")'
-          - 'contains_all(http_2_body, "\"success\":true", "msg\":")'
-          - "contains(http_2_header, 'application/json')"
-          - "http_2_status_code == 200"
-        condition: and
-# digest: 490a00463044021f4d76b49e02f27ca2bcbf6564481dba460a4c5dff556b17641349307a0b86ac022100ce475244644645c3aebbe048b946bf4b0e4f9dbe44be1516764a4150adedfcce:922c64590222798bb761d5b6d8e72950
+          - contains_all(http_2_body, "\"success\":true", "msg\":")
+          - contains(http_2_header, 'application/json')
+          - http_2_status_code == 200
+        type: dsl
+    matchers-condition: and
+    method: POST
+    path:
+      - '{{BaseURL}}/login'
+    payloads:
+      password:
+        - admin
+      username:
+        - admin
