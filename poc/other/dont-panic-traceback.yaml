@@ -1,29 +1,26 @@
+http:
+- matchers:
+  - case-insensitive: true
+    condition: and
+    part: body
+    type: word
+    words:
+    - most recent call last
+    - Traceback
+    - DON'T PANIC
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: dont-panic-traceback
-
 info:
-  name: DON'T PANIC Traceback
   author: ritikchaddha
-  severity: low
-  description: |
-    DON'T PANIC Traceback was detected.
+  description: 'DON''T PANIC Traceback was detected.
+
+    '
   metadata:
-    verified: true
     max-request: 1
     shodan-query: title:"Debugger"
+    verified: true
+  name: DON'T PANIC Traceback
+  severity: low
   tags: traceback,dont-panic,misconfig,vuln
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "most recent call last"
-          - "Traceback"
-          - "DON'T PANIC"
-        condition: and
-        case-insensitive: true
-

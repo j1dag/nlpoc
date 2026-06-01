@@ -1,42 +1,43 @@
-id: prtg-detect
-
+id: prtg-detect 2
 info:
-  name: Detect PRTG
   author: geeknik
+  description: Monitor all the systems, devices, traffic, and applications in your
+    IT infrastructure -- https://www.paessler.com/prtg
+  name: Detect PRTG
   severity: info
-  description: Monitor all the systems, devices, traffic, and applications in your IT infrastructure -- https://www.paessler.com/prtg
-  metadata:
-    max-request: 3
-  tags: tech,prtg
+requests:
+- attack: sniper
+  extractors:
+  - kval:
+    - Server
+    part: header
+    type: kval
+  matchers:
+  - status:
+    - 200
+    type: status
+  - condition: and
+    part: body
+    type: word
+    words:
+    - PRTG Network Monitor
+  - part: header
+    regex:
+    - PRTG
+    type: regex
+  matchers-condition: and
+  payloads:
+    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+  raw:
+  - 'GET /prtg/index.htm HTTP/1.1
 
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/index.htm"
-      - "{{BaseURL}}/prtg/index.htm"
-      - "{{BaseURL}}/PRTG/index.htm"
+    Host: {{Subdomains}}
 
-    stop-at-first-match: true
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
 
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
+    Accept-Encoding: gzip, deflate
 
-      - type: word
-        part: body
-        words:
-          - "PRTG Network Monitor"
+    Accept: */*
 
-      - type: regex
-        part: header
-        regex:
-          - PRTG
-
-    extractors:
-      - type: kval
-        part: header
-        kval:
-          - Server
-# digest: 490a00463044022006f65d03a7cc73f09d76e12ab5a2fb7438808a17eec6730af140c123ca6a54f302206773387288b91b818f111a3b79cfae1a00692c1c4972c3d3be256b59a898df17:922c64590222798bb761d5b6d8e72950
+    '
+  threads: 100

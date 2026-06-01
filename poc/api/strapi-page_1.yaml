@@ -1,28 +1,28 @@
-id: strapi-page
-
+id: strapi-page 1
 info:
-  name: Strapi API - Detect
   author: dhiyaneshDk
+  name: Strapi Page
+  reference: https://www.shodan.io/search?query=http.title%3A%22Welcome+to+your+Strapi+app%22
   severity: info
-  description: Strapi API was detected.
-  reference: https://strapi.io/
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  metadata:
-    shodan-query: http.title:"Welcome to your Strapi app"
   tags: api,strapi
-
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
+- attack: sniper
+  matchers:
+  - type: word
+    words:
+    - <title>Welcome to your Strapi app</title>
+  payloads:
+    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+  raw:
+  - 'GET / HTTP/1.1
 
-    matchers:
-      - type: word
-        words:
-          - '<title>Welcome to your Strapi app</title>'
-        condition: and
+    Host: {{Subdomains}}
 
-# Enhanced by mp on 2023/02/05
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+
+    Accept-Encoding: gzip, deflate
+
+    Accept: */*
+
+    '
+  threads: 100

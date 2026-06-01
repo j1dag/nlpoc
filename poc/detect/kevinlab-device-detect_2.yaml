@@ -1,33 +1,43 @@
-id: kevinlab-device-detect
-
+id: kevinlab-device-detect 2
 info:
-  name: KevinLAB Devices Detection
   author: gy741
+  description: KevinLab is a venture company specialized in IoT, Big Data, A.I based
+    energy management platform. KevinLAB's BEMS (Building Energy Management System)
+    enables efficient energy management in buildings. It improves the efficient of
+    energy use by collecting and analyzing various information of energy usage and
+    facilities in the building. It also manages energy usage, facility efficiency
+    and indoor environment control.
+  name: KevinLAB Devices Detection
   severity: info
-  description: KevinLab is a venture company specialized in IoT, Big Data, A.I based energy management platform. KevinLAB's BEMS (Building Energy Management System) enables efficient energy management in buildings by collecting and analyzing various information of energy usage and facilities as well as efficiency and indoor environment control.
-  metadata:
-    max-request: 2
-  tags: iot,kevinlab
+  tags: iot
+requests:
+- attack: sniper
+  matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - <title>BEMS</title>
+    - ../http/index.php
+  - condition: and
+    part: body
+    type: word
+    words:
+    - <title>HEMS</title>
+    - ../dashboard/proc.php
+  matchers-condition: and
+  payloads:
+    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+  raw:
+  - 'GET /dashboard/ HTTP/1.1
 
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/pages/"
-      - "{{BaseURL}}/dashboard/"
+    Host: {{Subdomains}}
 
-    matchers-condition: or
-    matchers:
-      - type: word
-        words:
-          - '<title>BEMS</title>'
-          - '../http/index.php'
-        part: body
-        condition: and
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
 
-      - type: word
-        words:
-          - '<title>HEMS</title>'
-          - '../dashboard/proc.php'
-        part: body
-        condition: and
-# digest: 4a0a0047304502205578d574a49a2c8bb480bf2ec7e98f6c2f5c6d98495de5b4680425342883601a02210084f5da84735db519857b96ea7eb1df079f1e0fd9ff8252d2a25006e7fd379fd0:922c64590222798bb761d5b6d8e72950
+    Accept-Encoding: gzip, deflate
+
+    Accept: */*
+
+    '
+  threads: 100

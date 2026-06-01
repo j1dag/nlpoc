@@ -1,28 +1,25 @@
-id: zipkin-exposure
-
+id: zipkin-exposure 2
 info:
-  name: Zipkin Login Panel - Detect
   author: pdteam
-  severity: info
-  description: Zipkin login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  metadata:
-    verified: true
-    shodan-query: html:"webpackJsonpzipkin-lens"
-  tags: panel,zipkin
-
+  name: Zipkin Exposure
+  severity: low
+  tags: panel
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-      - "{{BaseURL}}/zipkin/"
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "webpackJsonpzipkin-lens"
+- attack: sniper
+  matchers:
+  - part: body
+    type: word
+    words:
+    - webpackJsonpzipkin-lens
+  payloads:
+    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+  raw:
+  - 'GET /zipkin/ HTTP/1.1
 
-# Enhanced by mp on 2023/01/29
+    Host: {{Subdomains}}
+
+    User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
+    (KHTML, like Gecko)
+
+    '
+  threads: 100
