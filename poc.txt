@@ -49086,6 +49086,7 @@
 ./poc/config/travis-config_1_1.yaml
 ./poc/config/travis-config_1_2.yaml
 ./poc/config/trueconf-bdu-2025-10116.yaml
+./poc/config/trueconf-server-panel.yaml
 ./poc/config/truffle-config-exposure.yaml
 ./poc/config/truffle-config-exposure_2.yaml
 ./poc/config/truffle-config-exposure_3.yaml
@@ -446385,6 +446386,7 @@
 ./poc/detect/comment_info_detector-12bcc338-9e16-410f-bf3b-3756bc9b7024.yaml
 ./poc/detect/communigate-ftp-detect.yaml
 ./poc/detect/communigate-ftp-detect_1.yaml
+./poc/detect/communigate-pro-detect.yaml
 ./poc/detect/compal-panel-detect.yaml
 ./poc/detect/compalex-panel-detect.yaml
 ./poc/detect/compalex-panel-detect_1.yaml
@@ -713293,6 +713295,7 @@
 ./poc/other/signatures-10261_1_1.yaml
 ./poc/other/signatures-10261_1_2.yaml
 ./poc/other/signatures-10261_1_3.yaml
+./poc/other/signatures-10261_2.yaml
 ./poc/other/signatures-10261_2_1.yaml
 ./poc/other/signatures-10262.yaml
 ./poc/other/signatures-10262_1.yaml
@@ -747068,6 +747071,7 @@
 ./poc/other/vinteo-client-version_1.yaml
 ./poc/other/vinteo-client-version_2.yaml
 ./poc/other/vinteo-client-version_3.yaml
+./poc/other/vinteo-server-panel.yaml
 ./poc/other/vintwood-f0c69764-d64b-4231-8251-2f289dce69e1.yaml
 ./poc/other/violation-outreach-monitoring-system.yaml
 ./poc/other/violation-outreach-monitoring-system_1.yaml
