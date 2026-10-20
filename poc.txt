@@ -2809,6 +2809,8 @@
 ./poc/apache/apache-shiro_2.yaml
 ./poc/apache/apache-shiro_3.yaml
 ./poc/apache/apache-skywalking-dashboard.yaml
+./poc/apache/apache-skywalking-horizon-ui-config.yaml
+./poc/apache/apache-skywalking-horizon-ui-detect.yaml
 ./poc/apache/apache-skywalking.yaml
 ./poc/apache/apache-skywalking_1.yaml
 ./poc/apache/apache-skywalking_2.yaml
@@ -9481,6 +9483,7 @@
 ./poc/auth/BT742-PMA-UnauthorizedAccess_2.yaml
 ./poc/auth/BT742-PMA-UnauthorizedAccess_3.yaml
 ./poc/auth/Bitrix-Account-Enumeration_UIDH_login_admin.yaml
+./poc/auth/Bitrix-Account-Enumeration_UIDH_login_admin_1.yaml
 ./poc/auth/Bitrix-Account-Enumeration_UIDH_login_admin_2.yaml
 ./poc/auth/Bitrix-Account-Enumeration_UIDH_login_admin_3.yaml
 ./poc/auth/BlindSQLAuth.yaml
@@ -46135,6 +46138,7 @@
 ./poc/config/apache-pinot-config_1.yaml
 ./poc/config/apache-pinot-config_2.yaml
 ./poc/config/apache-pinot-config_3.yaml
+./poc/config/apache-skywalking-horizon-ui-config.yaml
 ./poc/config/api-iconfinder-438.yaml
 ./poc/config/api-iconfinder-438_3.yaml
 ./poc/config/api-iconfinder-439.yaml
@@ -181851,6 +181855,7 @@
 ./poc/cve/CVE-2022-21824_2.yaml
 ./poc/cve/CVE-2022-21824_3.yaml
 ./poc/cve/CVE-2022-21826.yaml
+./poc/cve/CVE-2022-21826_1.yaml
 ./poc/cve/CVE-2022-21826_1_1.yaml
 ./poc/cve/CVE-2022-21826_2.yaml
 ./poc/cve/CVE-2022-21826_3.yaml
@@ -183182,6 +183187,7 @@
 ./poc/cve/CVE-2022-23638-svg_support-f6a41a90-d116-4cb5-9627-08eb70f9654d.yaml
 ./poc/cve/CVE-2022-23638.yaml
 ./poc/cve/CVE-2022-23642.yaml
+./poc/cve/CVE-2022-23642_1.yaml
 ./poc/cve/CVE-2022-23642_2.yaml
 ./poc/cve/CVE-2022-23646.yaml
 ./poc/cve/CVE-2022-23646_1.yaml
@@ -419838,6 +419844,7 @@
 ./poc/cve/CVE-2026-93031-out_of_the_box-a10ab4d6-318e-4dd6-9f81-ed25f181d074.yaml
 ./poc/cve/CVE-2026-93031-share_one_drive-a10ab4d6-318e-4dd6-9f81-ed25f181d074.yaml
 ./poc/cve/CVE-2026-93031-use_your_drive-a10ab4d6-318e-4dd6-9f81-ed25f181d074.yaml
+./poc/cve/CVE-2026-93300-eventon_subscriber-0f6b6b32-bcde-4c40-a954-c5c62eb3436e.yaml
 ./poc/cve/CVE-2026-93303-ht_contactform-d5c3702c-65d3-4b89-a78f-6df267b02a1e.yaml
 ./poc/cve/CVE-2026-9331-edd_products_feed_pro-145cae1e-1e38-49bb-a63f-204246de6a37.yaml
 ./poc/cve/CVE-2026-93339-ditty_news_ticker-3059a9fa-b566-431f-94ee-3a2f8a2df417.yaml
@@ -419898,6 +419905,7 @@
 ./poc/cve/CVE-2026-93778-wp_yelp_review_slider-df6cbc36-d136-49c1-81f0-a61cb91f0ad7.yaml
 ./poc/cve/CVE-2026-93836-woo_product_bundle-fc620054-00ed-4c2e-9448-b40ae28efff3.yaml
 ./poc/cve/CVE-2026-93875-jet_appointments_booking-758f9402-33f4-40a6-a021-bf689d3b4a1b.yaml
+./poc/cve/CVE-2026-93878-dg_divi_carousel-f482cda1-fe38-455a-b913-bebb21b7bda4.yaml
 ./poc/cve/CVE-2026-93880-greenshift_animation_and_page_builder_blocks-133a7a71-4428-4ada-8ed7-a7c6fe54a0cb.yaml
 ./poc/cve/CVE-2026-93882-learnpress-1f35f646-1bd6-4785-bdc2-c815644b2b2d.yaml
 ./poc/cve/CVE-2026-93883-advanced_classifieds_and_directory_pro-8a17cd6e-8c9c-4427-ac59-2bd8624be492.yaml
@@ -445192,6 +445200,7 @@
 ./poc/detect/apache-shenyu-detect_2.yaml
 ./poc/detect/apache-shenyu-detect_3.yaml
 ./poc/detect/apache-shenyu-detect_4.yaml
+./poc/detect/apache-skywalking-horizon-ui-detect.yaml
 ./poc/detect/apache-sling-detect.yaml
 ./poc/detect/apache-solr-detect.yaml
 ./poc/detect/apache-solr-detect_2.yaml
@@ -600007,6 +600016,7 @@
 ./poc/other/dfgames_1.yaml
 ./poc/other/dfgames_2.yaml
 ./poc/other/dfx_woo_role_changer-833d9f92-9af1-4332-9b1d-2d1d37073b4b.yaml
+./poc/other/dg_divi_carousel-f482cda1-fe38-455a-b913-bebb21b7bda4.yaml
 ./poc/other/dgn2200.yaml
 ./poc/other/dgn2200_1.yaml
 ./poc/other/dgn2200_2.yaml
@@ -615851,6 +615861,7 @@
 ./poc/other/eventon_lite-d2994fbb-29b0-4725-a046-edeca4bcbcd7.yaml
 ./poc/other/eventon_lite-f23ba80e-94d7-40a1-beb8-da9ec0c9f7d7.yaml
 ./poc/other/eventon_rsvp-aac9be6c-7498-482e-8c38-da17a2c7f00a.yaml
+./poc/other/eventon_subscriber-0f6b6b32-bcde-4c40-a954-c5c62eb3436e.yaml
 ./poc/other/eventpress-157cf14a019f2f39567d396451ba436d.yaml
 ./poc/other/eventpress-157cf14a019f2f39567d396451ba436d_2.yaml
 ./poc/other/eventpress-157cf14a019f2f39567d396451ba436d_3.yaml
@@ -731585,6 +731596,7 @@
 ./poc/other/the-events-calendar_5_1.yaml
 ./poc/other/the-events-calendar_5_2.yaml
 ./poc/other/the-events-calendar_5_3.yaml
+./poc/other/the-grid.yaml
 ./poc/other/the-hackers-diet-5f67ffcf6d86ff0fdeccf2adf25bfcec.yaml
 ./poc/other/the-hackers-diet-5f67ffcf6d86ff0fdeccf2adf25bfcec_1.yaml
 ./poc/other/the-hackers-diet-5f67ffcf6d86ff0fdeccf2adf25bfcec_2.yaml
