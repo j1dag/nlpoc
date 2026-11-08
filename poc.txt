@@ -615618,6 +615618,7 @@
 ./poc/other/email_queue-153a9a08-66b3-40fd-963d-93058c863a80.yaml
 ./poc/other/email_reminders-a0adfd13-a9f1-4bec-96ec-6a51cd08e4ea.yaml
 ./poc/other/email_reminders-c9fd7c6b-9ba3-4e27-9b3d-8b1fbcc5e26f.yaml
+./poc/other/email_security_gateway.yaml
 ./poc/other/email_shortcode-c7b5e028-d4ea-4f6d-aee1-0e9661853d43.yaml
 ./poc/other/email_subscribe-033f8b21-6c5a-433f-b60d-5509fb203234.yaml
 ./poc/other/email_subscribe-14ffe10e-e1a6-4752-9ff9-d2b01a49521e.yaml
